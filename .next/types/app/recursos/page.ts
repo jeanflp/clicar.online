@@ -1,4 +1,4 @@
-// File: C:\Users\jeafl\OneDrive\Desktop\clicar.online-web\app\recursos\page.tsx
+// File: C:\Users\jeafl\OneDrive\Desktop\clicar.online-web - Copia\app\recursos\page.tsx
 import * as entry from '../../../../app/recursos/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
