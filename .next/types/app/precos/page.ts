@@ -1,4 +1,4 @@
-// File: C:\Users\jeafl\OneDrive\Desktop\clicar.online-web\app\precos\page.tsx
+// File: C:\Users\jeafl\OneDrive\Desktop\clicar.online-web - Copia\app\precos\page.tsx
 import * as entry from '../../../../app/precos/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
