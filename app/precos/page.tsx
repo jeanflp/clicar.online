@@ -3,35 +3,9 @@
 import Link from 'next/link';
 import { Logo } from '../components/Logo';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import { Particles } from '../components/Particles';
 
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return windowSize;
-}
-
 export default function Precos() {
-  const { width, height } = useWindowSize();
-
   return (
     <main className="min-h-screen bg-white relative overflow-hidden">
       <Particles />
@@ -41,33 +15,6 @@ export default function Precos() {
         <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 bg-yellow-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
       </div>
-
-      {/* Animated Particles */}
-      {width > 0 && height > 0 && (
-        <div className="fixed inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-yellow-400 rounded-full"
-              initial={{
-                opacity: 0,
-                x: Math.random() * width,
-                y: Math.random() * height,
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                x: Math.random() * width,
-                y: Math.random() * height,
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
-      )}
 
       {/* Top Bar */}
       <nav className="bg-white/80 backdrop-blur-sm fixed w-full z-50 border-b border-yellow-100">
