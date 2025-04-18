@@ -136,6 +136,7 @@ export default function EmBreve() {
 
         {/* Animated Particles */}
         <div className="absolute inset-0 pointer-events-none">
+<<<<<<< HEAD
   {[...Array(20)].map((_, i) => (
     <motion.div
       key={i}
@@ -159,6 +160,30 @@ export default function EmBreve() {
     />
   ))}
 </div>
+=======
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-yellow-400 rounded-full"
+              initial={{
+                opacity: 0,
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+              }}
+              animate={{
+                opacity: [0, 1, 0],
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+              }}
+              transition={{
+                duration: Math.random() * 3 + 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
+>>>>>>> 8d5067cc (a)
       </div>
     </main>
   );

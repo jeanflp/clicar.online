@@ -65,5 +65,9 @@ yarn start
 - `public/` - Arquivos estáticos
 - `tailwind.config.js` - Configuração do Tailwind CSS
 - `tsconfig.json` - Configuração do TypeScript
+<<<<<<< HEAD
 - `postcss.config.js` - Configuração do PostCSS # clicar.online
 # clicar.online
+=======
+- `postcss.config.js` - Configuração do PostCSS 
+>>>>>>> 8d5067cc (a)

@@ -292,7 +292,11 @@ export default function Home() {
               Recursos Exclusivos
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+<<<<<<< HEAD
               Descubra por que centenas de usuários escolhem nossa plataforma para gerenciar suas contas com segurança e eficiência.
+=======
+              Descubra por que milhares de usuários escolhem nossa plataforma para gerenciar suas contas com segurança e eficiência.
+>>>>>>> 8d5067cc (a)
             </p>
           </motion.div>
 
