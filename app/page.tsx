@@ -5,6 +5,29 @@ import Link from 'next/link';
 import { Logo } from './components/Logo';
 import { motion, useMotionValue } from 'framer-motion';
 
+function useWindowSize() {
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowSize;
+}
+
 function useCountAnimation(end: number, duration: number = 2000) {
   const [count, setCount] = useState(0);
 
@@ -36,6 +59,8 @@ function useCountAnimation(end: number, duration: number = 2000) {
 }
 
 export default function Home() {
+  const { width, height } = useWindowSize();
+
   return (
     <main className="min-h-screen bg-white relative overflow-hidden">
       {/* Background Blobs */}
@@ -46,35 +71,37 @@ export default function Home() {
       </div>
 
       {/* Animated Particles */}
-      <div className="fixed inset-0 pointer-events-none">
-        {[...Array(50)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-amber-400 rounded-full"
-            initial={{
-              opacity: 0,
-              x: Math.random() * window.innerWidth,
-              y: -20,
-            }}
-            animate={{
-              opacity: [0, 1, 0],
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * (window.innerHeight * 0.7),
-            }}
-            transition={{
-              duration: Math.random() * 4 + 3,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-              delay: Math.random() * 2,
-            }}
-            style={{
-              filter: "blur(0.5px)",
-              boxShadow: "0 0 12px rgba(245, 158, 11, 0.6)"
-            }}
-          />
-        ))}
-      </div>
+      {width > 0 && height > 0 && (
+        <div className="fixed inset-0 pointer-events-none">
+          {[...Array(50)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-amber-400 rounded-full"
+              initial={{
+                opacity: 0,
+                x: Math.random() * width,
+                y: -20,
+              }}
+              animate={{
+                opacity: [0, 1, 0],
+                x: Math.random() * width,
+                y: Math.random() * (height * 0.7),
+              }}
+              transition={{
+                duration: Math.random() * 4 + 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+                delay: Math.random() * 2,
+              }}
+              style={{
+                filter: "blur(0.5px)",
+                boxShadow: "0 0 12px rgba(245, 158, 11, 0.6)"
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Top Bar */}
       <nav className="bg-white/90 backdrop-blur-sm fixed w-full z-50 border-b border-amber-200 shadow-lg shadow-amber-100/20">
