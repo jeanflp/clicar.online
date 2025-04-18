@@ -136,7 +136,6 @@ export default function EmBreve() {
 
         {/* Animated Particles */}
         <div className="absolute inset-0 pointer-events-none">
-<<<<<<< HEAD
   {[...Array(20)].map((_, i) => (
     <motion.div
       key={i}
@@ -160,7 +159,6 @@ export default function EmBreve() {
     />
   ))}
 </div>
-=======
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
@@ -183,7 +181,6 @@ export default function EmBreve() {
             />
           ))}
         </div>
->>>>>>> 8d5067cc (a)
       </div>
     </main>
   );
