@@ -23,13 +23,8 @@
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-<<<<<<< HEAD
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-=======
 /******/ 			id: moduleId,
 /******/ 			loaded: false,
->>>>>>> f7da5ef7730addb63f0d31ffac8901522af4cc1b
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
@@ -45,12 +40,9 @@
 /******/ 			if(threw) delete __webpack_module_cache__[moduleId];
 /******/ 		}
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
 /******/ 	
->>>>>>> f7da5ef7730addb63f0d31ffac8901522af4cc1b
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
@@ -99,8 +91,6 @@
 /******/ 		};
 /******/ 	}();
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	!function() {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
@@ -177,7 +167,6 @@
 /******/ 		};
 /******/ 	}();
 /******/ 	
->>>>>>> f7da5ef7730addb63f0d31ffac8901522af4cc1b
 /******/ 	/* webpack/runtime/get javascript update chunk filename */
 /******/ 	!function() {
 /******/ 		// This function allow to reference all chunks
@@ -192,11 +181,7 @@
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.miniCssF = function(chunkId) {
 /******/ 			// return url for filenames based on template
-<<<<<<< HEAD
-/******/ 			return undefined;
-=======
 /******/ 			return "static/css/" + chunkId + ".css";
->>>>>>> f7da5ef7730addb63f0d31ffac8901522af4cc1b
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -207,10 +192,7 @@
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	!function() {
-<<<<<<< HEAD
-/******/ 		__webpack_require__.h = function() { return "08bbe3671c2a994f"; }
-=======
-/******/ 		__webpack_require__.h = function() { return "7e2f6b99057d5634"; }
+/******/ 		__webpack_require__.h = function() { return "82fd067df7aa7d17"; }
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -223,7 +205,6 @@
 /******/ 				if (typeof window === 'object') return window;
 /******/ 			}
 /******/ 		})();
->>>>>>> f7da5ef7730addb63f0d31ffac8901522af4cc1b
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
@@ -276,8 +257,6 @@
 /******/ 		};
 /******/ 	}();
 /******/ 	
-<<<<<<< HEAD
-=======
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -298,7 +277,6 @@
 /******/ 		};
 /******/ 	}();
 /******/ 	
->>>>>>> f7da5ef7730addb63f0d31ffac8901522af4cc1b
 /******/ 	/* webpack/runtime/trusted types policy */
 /******/ 	!function() {
 /******/ 		var policy;
@@ -855,9 +833,6 @@
 /******/ 			"webpack": 0
 /******/ 		};
 /******/ 		
-<<<<<<< HEAD
-/******/ 		// no chunk on demand loading
-=======
 /******/ 		__webpack_require__.f.j = function(chunkId, promises) {
 /******/ 				// JSONP chunk loading for javascript
 /******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
@@ -896,7 +871,6 @@
 /******/ 					}
 /******/ 				}
 /******/ 		};
->>>>>>> f7da5ef7730addb63f0d31ffac8901522af4cc1b
 /******/ 		
 /******/ 		// no prefetching
 /******/ 		
