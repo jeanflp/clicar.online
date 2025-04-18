@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Logo } from './components/Logo';
 import { motion, useMotionValue } from 'framer-motion';
+import { Particles } from './components/Particles';
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({
@@ -62,7 +63,8 @@ export default function Home() {
   const { width, height } = useWindowSize();
 
   return (
-    <main className="min-h-screen bg-white relative overflow-hidden">
+    <main className="relative min-h-screen bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
+      <Particles />
       {/* Background Blobs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
