@@ -3,36 +3,12 @@
 import Link from 'next/link';
 import { Logo } from '../components/Logo';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-
-function useWindowSize() {
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
-  });
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return windowSize;
-}
+import { Particles } from '../components/Particles';
 
 export default function EmBreve() {
-  const { width, height } = useWindowSize();
-
   return (
     <main className="min-h-screen bg-white relative overflow-hidden">
+      <Particles />
       {/* Gradient Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/4 -left-1/4 w-1/2 h-1/2 bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
@@ -158,31 +134,6 @@ export default function EmBreve() {
               </div>
             </motion.div>
           </motion.div>
-        </div>
-
-        {/* Animated Particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          {width > 0 && height > 0 && [...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-yellow-400 rounded-full"
-              initial={{
-                opacity: 0,
-                x: Math.random() * width,
-                y: Math.random() * height,
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                x: Math.random() * width,
-                y: Math.random() * height,
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
         </div>
       </div>
     </main>
