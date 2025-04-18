@@ -66,3 +66,4 @@ yarn start
 - `tailwind.config.js` - Configuração do Tailwind CSS
 - `tsconfig.json` - Configuração do TypeScript
 - `postcss.config.js` - Configuração do PostCSS # clicar.online
+# clicar.online
