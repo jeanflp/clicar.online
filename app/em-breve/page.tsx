@@ -136,28 +136,29 @@ export default function EmBreve() {
 
         {/* Animated Particles */}
         <div className="absolute inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-2 h-2 bg-yellow-400 rounded-full"
-              initial={{
-                opacity: 0,
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              animate={{
-                opacity: [0, 1, 0],
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              transition={{
-                duration: Math.random() * 3 + 2,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          ))}
-        </div>
+  {[...Array(20)].map((_, i) => (
+    <motion.div
+      key={i}
+      className="absolute w-2 h-2 bg-yellow-400 rounded-full"
+      initial={{
+        opacity: 0,
+        // Verificando se estamos no lado do cliente
+        x: typeof window !== "undefined" ? Math.random() * window.innerWidth : 0,
+        y: typeof window !== "undefined" ? Math.random() * window.innerHeight : 0,
+      }}
+      animate={{
+        opacity: [0, 1, 0],
+        x: typeof window !== "undefined" ? Math.random() * window.innerWidth : 0,
+        y: typeof window !== "undefined" ? Math.random() * window.innerHeight : 0,
+      }}
+      transition={{
+        duration: Math.random() * 3 + 2,
+        repeat: Infinity,
+        delay: Math.random() * 2,
+      }}
+    />
+  ))}
+</div>
       </div>
     </main>
   );
