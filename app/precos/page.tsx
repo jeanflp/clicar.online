@@ -32,7 +32,7 @@ export default function Precos() {
                   Preços
                 </Link>
                 <Link 
-                  href="https://discord.gg/seu-servidor" 
+                  href="https://discord.gg/8P2y9JhUdh" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-yellow-500 transition-colors"
@@ -73,12 +73,12 @@ export default function Precos() {
             className="text-center mb-16"
           >
             <motion.h1 
-              className="text-6xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent"
+              className="text-6xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl leading-tight px-2 sm:px-0"
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Planos Simples e Transparentes
+              <span className="inline-block">Planos Simples</span> <span className="inline-block">e Transparentes</span>
             </motion.h1>
             <motion.p 
               className="text-2xl text-gray-600 max-w-2xl mx-auto"
@@ -162,15 +162,15 @@ export default function Precos() {
                     R$ 69,90/mês
                   </motion.p>
                   <div className="flex items-center justify-end">
-                    <motion.p 
-                      className="text-3xl font-bold text-gray-800"
+                    <motion.div 
+                      className="flex items-baseline"
                       initial={{ scale: 1 }}
                       animate={{ scale: [1, 1.1, 1] }}
                       transition={{ duration: 0.3, delay: 0.8 }}
                     >
-                      R$ 35,90
-                    </motion.p>
-                    <span className="text-gray-600 ml-1">/mês</span>
+                      <span className="text-3xl font-bold text-gray-800">R$ 35,90</span>
+                      <span className="text-gray-600 ml-1">/mês</span>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -187,20 +187,20 @@ export default function Precos() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                     </svg>
                     Sincronização remota de cliques
-                    <span className="ml-2 bg-yellow-400 text-white text-xs font-bold px-2 py-0.5 rounded-full">NEW</span>
+                    <span className="ml-2 bg-yellow-400 text-white text-xs font-bold px-2 py-0.5 rounded-full">NOVO</span>
                   </div>
                 </li>
                 <li className="flex items-center text-gray-600">
                   <svg className="w-5 h-5 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  Suporte prioritário 24/7
+                  Sincronização de cliques
                 </li>
                 <li className="flex items-center text-gray-600">
                   <svg className="w-5 h-5 text-yellow-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                   </svg>
-                  Atualizações prioritárias
+                  Suporte prioritário 24/7
                 </li>
               </ul>
               <Link href="/em-breve">

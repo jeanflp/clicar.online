@@ -83,7 +83,7 @@ export function ClientHome() {
                   Preços
                 </Link>
                 <Link 
-                  href="https://discord.gg/seu-servidor" 
+                  href="https://discord.gg/8P2y9JhUdh" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-yellow-600 transition-colors"
