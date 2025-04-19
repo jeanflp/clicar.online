@@ -62,6 +62,11 @@ function useCountAnimation(end: number, duration: number = 2000) {
 export function ClientHome() {
   const { width, height } = useWindowSize();
   const activeUsers = useCountAnimation(100);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   return (
     <main className="relative min-h-screen bg-white text-gray-900 overflow-hidden">
@@ -110,7 +115,72 @@ export function ClientHome() {
                 </motion.button>
               </Link>
             </div>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button 
+                className="text-gray-600 hover:text-yellow-600 focus:outline-none"
+                onClick={toggleMobileMenu}
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth="2" 
+                    d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
+          
+          {/* Mobile Menu Dropdown */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-2 px-4 space-y-4 bg-white border-t border-gray-100">
+              <Link 
+                href="#recursos" 
+                className="block py-2 text-gray-600 hover:text-yellow-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Recursos
+              </Link>
+              <Link 
+                href="/precos" 
+                className="block py-2 text-gray-600 hover:text-yellow-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Preços
+              </Link>
+              <Link 
+                href="https://discord.gg/8P2y9JhUdh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2 text-gray-600 hover:text-yellow-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contato
+              </Link>
+              <Link 
+                href="/em-breve" 
+                className="block py-2 text-gray-600 hover:text-yellow-600 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Entrar
+              </Link>
+              <Link 
+                href="/em-breve"
+                className="block"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <motion.button 
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-6 rounded-full transition-colors shadow-md text-center"
+                >
+                  Download
+                </motion.button>
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
 
@@ -496,7 +566,7 @@ export function ClientHome() {
             </div>
             <div className="mt-3 pt-3 border-t md:border-t-0 border-gray-200 text-center md:text-left w-full md:w-auto">
               <p className="text-xs text-gray-600">
-                © 2024 Clicar.Online. Todos os direitos reservados.
+                © 2025 clicar.online. Todos os direitos reservados.
               </p>
             </div>
           </div>

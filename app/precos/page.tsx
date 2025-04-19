@@ -1,11 +1,18 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Logo } from '../components/Logo';
 import { motion } from 'framer-motion';
 import { Particles } from '../components/Particles';
 
 export default function Precos() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
     <main className="min-h-screen bg-white relative overflow-hidden">
       <Particles />
@@ -59,7 +66,72 @@ export default function Precos() {
                 </motion.button>
               </Link>
             </div>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button 
+                className="text-gray-600 hover:text-yellow-500 focus:outline-none"
+                onClick={toggleMobileMenu}
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth="2" 
+                    d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
+          
+          {/* Mobile Menu Dropdown */}
+          {mobileMenuOpen && (
+            <div className="md:hidden py-2 px-4 space-y-4 bg-white/90 backdrop-blur-sm border-t border-yellow-100">
+              <Link 
+                href="/#recursos" 
+                className="block py-2 text-gray-600 hover:text-yellow-500 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Recursos
+              </Link>
+              <Link 
+                href="/precos" 
+                className="block py-2 text-gray-600 hover:text-yellow-500 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Preços
+              </Link>
+              <Link 
+                href="https://discord.gg/8P2y9JhUdh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-2 text-gray-600 hover:text-yellow-500 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contato
+              </Link>
+              <Link 
+                href="/em-breve" 
+                className="block py-2 text-gray-600 hover:text-yellow-500 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Entrar
+              </Link>
+              <Link 
+                href="/em-breve"
+                className="block"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <motion.button 
+                  whileTap={{ scale: 0.95 }}
+                  className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-medium py-2 px-6 rounded-full transition-colors shadow-lg shadow-yellow-200/50 text-center"
+                >
+                  Download
+                </motion.button>
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
 

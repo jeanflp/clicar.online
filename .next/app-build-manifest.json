@@ -6,6 +6,11 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
+    "/em-breve/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/em-breve/page.js"
+    ],
     "/precos/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -16,10 +21,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/em-breve/page": [
+    "/recursos/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/em-breve/page.js"
+      "static/chunks/app/recursos/page.js"
     ]
   }
 }
