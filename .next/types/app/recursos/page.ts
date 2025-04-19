@@ -1,8 +1,8 @@
-// File: C:\Users\jeafl\OneDrive\Desktop\clicar.online-web\app\precos\page.tsx
-import * as entry from '../../../../app/precos/page.js'
+// File: C:\Users\jeafl\OneDrive\Desktop\clicar.online-web\app\recursos\page.tsx
+import * as entry from '../../../../app/recursos/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../app/precos/page.js')
+type TEntry = typeof import('../../../../app/recursos/page.js')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{
